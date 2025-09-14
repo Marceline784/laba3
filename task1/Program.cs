@@ -29,10 +29,10 @@ public class Person
     }
 }
 class Program
+{
+    static void Main()
     {
-        static void Main()
-        {
-            Person person1 = new Person();
+        Person person1 = new Person();
         person1.Name = "Pesho";
         person1.Age = 20;
         Person person2 = new Person("Gosho", 18);
@@ -41,5 +41,5 @@ class Program
         Console.WriteLine($"{person2.Name} {person2.Age}");
         Console.WriteLine($"{person3.Name} {person3.Age}");
     }
-    }
+}
 
