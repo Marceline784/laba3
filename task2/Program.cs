@@ -4,11 +4,10 @@ public class Person
     private string name;
     private int age;
 
-    // Властивість для доступу до поля name
     public string Name
     {
-        get { return name; } // повертає значення
-        set { name = value; } // встановлює значення
+        get { return name; } 
+        set { name = value; } 
     }
 
     public int Age

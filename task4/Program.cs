@@ -8,49 +8,31 @@ public class Employee
     private string department;
     private string email;
     private int age;
-
+    public string Name { get; set; }
+    public float Salary { get; set; }
+    public string Position { get; set; }
+    public string Department { get; set; }
+    public string Email { get; set; }
+    public int Age { get; set; }
+    //public Employee(string name, float salary, string position, string department,
+    //                string email = "N/A", int age = -1)
+    //{
+    //    this.name = name;
+    //    this.salary = salary;
+    //    this.position = position;
+    //    this.department = department;
+    //    this.email = email;
+    //    this.age = age;
+    //}
     public Employee(string name, float salary, string position, string department,
-                    string email = "N/A", int age = -1)
+                   string email = "N/A", int age = -1)
     {
-        this.name = name;
-        this.salary = salary;
-        this.position = position;
-        this.department = department;
-        this.email = email;
-        this.age = age;
-    }
-    public string Name
-    {
-        get { return name; }
-        set { name = value; }
-    }
-
-    public float Salary
-    {
-        get { return salary; }
-        set { salary = value; }
-    }
-
-    public string Position
-    {
-        get { return position; }
-        set { position = value; }
-    }
-    public string Department
-    {
-        get { return department; }
-        set { department = value; }
-    }
-    public string Email
-    {
-        get { return email; }
-        set { email = value; }
-    }
-
-    public int Age
-    {
-        get { return age; }
-        set { age = value; }
+        Name = name;
+        Salary = salary;
+        Position = position;
+        Department = department;
+        Email = email;
+        Age = age;
     }
     public void PrintInfo()
     {
@@ -62,14 +44,13 @@ public class Employee
         int count = 0;
         for (int i = 0; i < employees.Count; i++)
         {
-            // Якщо відділ співпадає — додаємо зарплату до суми
             if (employees[i].Department == department)
             {
                 sum += employees[i].Salary;
                 count++;
             }
         }
-        if (count == 0) return 0; // захист від ділення на нуль
+        if (count == 0) return 0; 
         return sum / count;
     }
 
@@ -100,20 +81,18 @@ class Program
         //    string email = Console.ReadLine();
         //    if (email == null || email == "")
         //    {
-        //        email = "n/a"; // значення за замовчуванням
+        //        email = "n/a"; 
         //    }
-
-        //    // --- Перевірка віку вручну ---
         //    Console.Write("Enter age (or leave empty): ");
         //    string ageInput = Console.ReadLine();
         //    int age;
         //    if (ageInput == null || ageInput == "")
         //    {
-        //        age = -1; // значення за замовчуванням
+        //        age = -1; 
         //    }
         //    else
         //    {
-        //        age = int.Parse(ageInput); // перетворюємо рядок у число
+        //        age = int.Parse(ageInput);
         //    }
 
         //    Employee emp = new Employee(name, salary, position, department, email, age);
@@ -133,13 +112,11 @@ class Program
         {
             string current = employees[i].Department;
             float avgSalary = Employee.AverageSalary(employees, current);
-            // Якщо знайшли відділ із вищою середньою зарплатою
             if (avgSalary > highestAvgSalary)
             {
-                highestAvgSalary = avgSalary; // оновлюємо найбільшу середню
+                highestAvgSalary = avgSalary; 
                 topEmployees.Clear();
 
-                // Додаємо всіх співробітників цього відділу
                 for (int j = 0; j < employees.Count; j++)
                 {
                     if (employees[j].Department == current)
@@ -147,8 +124,6 @@ class Program
                 }
             }
         }
-        // --- Сортуємо працівників у цьому відділі за зарплатою (спадання) ---
-        // Використовується "бульбашкове сортування"
         for (int i = 0; i < topEmployees.Count - 1; i++)
         {
             for (int j = 0; j < topEmployees.Count - i - 1; j++)
