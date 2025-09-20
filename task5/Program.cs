@@ -7,7 +7,6 @@ class Car
     private double fuelPerKm;
     private double distance;
 
-
     public string Model { get; }
     public double Fuel { get; private set; }
     public double FuelPerKm { get; }
@@ -44,44 +43,58 @@ class Program
     {
         static void Main()
         {
-        List<Car> cars = new List<Car>();
+        //List<Car> cars = new List<Car>();
 
-        Console.Write("Enter number: ");
-        int n = int.Parse(Console.ReadLine());
+        //Console.Write("Enter number: ");
+        //int n = int.Parse(Console.ReadLine());
 
-        for (int i = 0; i < n; i++)
+        //for (int i = 0; i < n; i++)
+        //{
+        //    Console.Write("Enter model: ");
+        //    string model = Console.ReadLine();
+
+        //    Console.Write("Enter fuel amount: ");
+        //    double fuel = double.Parse(Console.ReadLine());
+
+        //    Console.Write("Enter fuel consumption per km: ");
+        //    double fuelPerKm = double.Parse(Console.ReadLine());
+
+        //    bool modelExists = false;
+        //    foreach (Car car in cars)
+        //    {
+        //        if (car.Model == model)
+        //        {
+        //            modelExists = true;
+        //            break;
+        //        }
+        //    }
+
+        //    if (!modelExists)
+        //    {
+        //        Car car = new Car(model, fuel, fuelPerKm);
+        //        cars.Add(car);
+        //    }
+        //    else
+        //    {
+        //        Console.WriteLine($"Car with model {model} already exists!");
+        //    }
+        //}
+        List<Car> cars = new List<Car>()
         {
-            Console.Write("Enter model: ");
-            string model = Console.ReadLine();
+            new Car("AudiA4", 23, 0.3),
+            new Car("BMW-M2", 45, 0.42)
+        };
 
-            Console.Write("Enter fuel amount: ");
-            double fuel = double.Parse(Console.ReadLine());
-
-            Console.Write("Enter fuel consumption per km: ");
-            double fuelPerKm = double.Parse(Console.ReadLine());
-
-            bool modelExists = false;
-            foreach (Car car in cars)
-            {
-                if (car.Model == model)
-                {
-                    modelExists = true;
-                    break;
-                }
-            }
-
-            if (!modelExists)
-            {
-                Car car = new Car(model, fuel, fuelPerKm);
-                cars.Add(car);
-            }
-            else
-            {
-                Console.WriteLine($"Car with model {model} already exists!");
-            }
-        }
-        string command;
-        while ((command = Console.ReadLine()) != "End")
+        List<string> commands = new List<string>()
+        {
+            "Drive BMW-M2 56",
+            "Drive AudiA4 5",
+            "Drive AudiA4 13"
+        };
+        // string command;
+        //while ((command = Console.ReadLine()) != "End")
+        //{
+        foreach (var command in commands)
         {
             string[] parts = command.Split();
             if (parts[0] == "Drive")
@@ -94,11 +107,12 @@ class Program
                     if (car.Model == carModel)
                     {
                         car.Drive(distance);
-                        break; 
+                        break;
                     }
                 }
             }
         }
+        //}
         foreach (Car car in cars)
         {
             car.ShowInfo();

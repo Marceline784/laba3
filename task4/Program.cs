@@ -14,16 +14,6 @@ public class Employee
     public string Department { get; set; }
     public string Email { get; set; }
     public int Age { get; set; }
-    //public Employee(string name, float salary, string position, string department,
-    //                string email = "N/A", int age = -1)
-    //{
-    //    this.name = name;
-    //    this.salary = salary;
-    //    this.position = position;
-    //    this.department = department;
-    //    this.email = email;
-    //    this.age = age;
-    //}
     public Employee(string name, float salary, string position, string department,
                    string email = "N/A", int age = -1)
     {
@@ -81,14 +71,14 @@ class Program
         //    string email = Console.ReadLine();
         //    if (email == null || email == "")
         //    {
-        //        email = "n/a"; 
+        //        email = "n/a";
         //    }
         //    Console.Write("Enter age (or leave empty): ");
         //    string ageInput = Console.ReadLine();
         //    int age;
         //    if (ageInput == null || ageInput == "")
         //    {
-        //        age = -1; 
+        //        age = -1;
         //    }
         //    else
         //    {
