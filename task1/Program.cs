@@ -23,7 +23,6 @@ public class Person
     }
     public Person(string name, int age)
     {
-        // this. використовується, щоб відрізнити поле класу від параметра
         this.name = name;
         this.age = age;
     }

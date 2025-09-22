@@ -2,11 +2,7 @@
 using System.Collections.Generic;
 class Car
 {
-    private string model;
-    private double fuel;
-    private double fuelPerKm;
-    private double distance;
-
+  
     public string Model { get; }
     public double Fuel { get; private set; }
     public double FuelPerKm { get; }

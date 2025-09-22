@@ -2,12 +2,6 @@
 using System.Collections.Generic;
 public class Employee
 {
-    private string name;
-    private float salary;
-    private string position;
-    private string department;
-    private string email;
-    private int age;
     public string Name { get; set; }
     public float Salary { get; set; }
     public string Position { get; set; }
@@ -26,7 +20,7 @@ public class Employee
     }
     public void PrintInfo()
     {
-        Console.WriteLine($"{name} {salary:F2} {email} {age}");
+        Console.WriteLine($"{Name} {Salary:F2} {Email} {Age}");
     }
     public static float AverageSalary(List<Employee> employees, string department)
     {
@@ -49,52 +43,46 @@ class Program
     {
         static void Main()
         {
-        //Console.Write("Enter number: ");
-        //int n = int.Parse(Console.ReadLine());
+        Console.Write("Enter number: ");
+        int n = int.Parse(Console.ReadLine());
 
-        //List<Employee> employees = new List<Employee>();
-        //for (int i = 0; i < n; i++)
-        //{
-        //    Console.Write("Enter name: ");
-        //    string name = Console.ReadLine();
-
-        //    Console.Write("Enter salary: ");
-        //    float salary = float.Parse(Console.ReadLine());
-
-        //    Console.Write("Enter position: ");
-        //    string position = Console.ReadLine();
-
-        //    Console.Write("Enter department: ");
-        //    string department = Console.ReadLine();
-
-        //    Console.Write("Enter email (or leave empty): ");
-        //    string email = Console.ReadLine();
-        //    if (email == null || email == "")
-        //    {
-        //        email = "n/a";
-        //    }
-        //    Console.Write("Enter age (or leave empty): ");
-        //    string ageInput = Console.ReadLine();
-        //    int age;
-        //    if (ageInput == null || ageInput == "")
-        //    {
-        //        age = -1;
-        //    }
-        //    else
-        //    {
-        //        age = int.Parse(ageInput);
-        //    }
-
-        //    Employee emp = new Employee(name, salary, position, department, email, age);
-        //    employees.Add(emp);
-        //}
-        List<Employee> employees = new List<Employee>()
+        List<Employee> employees = new List<Employee>();
+        for (int i = 0; i < n; i++)
         {
-            new Employee("Pesho", 120.00f, "Dev", "Development", "pesho@abv.bg", 28),
-            new Employee("Toncho", 333.33f, "Manager", "Marketing", "n/a", 33),
-            new Employee("Ivan", 840.20f, "ProjectLeader", "Development", "ivan@ivan.com"),
-            new Employee("Gosho", 0.20f, "Freeloader", "Nowhere", "n/a", 18)
-        };
+            Console.Write("Enter name: ");
+            string name = Console.ReadLine();
+
+            Console.Write("Enter salary: ");
+            float salary = float.Parse(Console.ReadLine());
+
+            Console.Write("Enter position: ");
+            string position = Console.ReadLine();
+
+            Console.Write("Enter department: ");
+            string department = Console.ReadLine();
+
+            Console.Write("Enter email (or leave empty): ");
+            string email = Console.ReadLine();
+            if (email == null || email == "")
+            {
+                email = "n/a";
+            }
+            Console.Write("Enter age (or leave empty): ");
+            string ageInput = Console.ReadLine();
+            int age;
+            if (ageInput == null || ageInput == "")
+            {
+                age = -1;
+            }
+            else
+            {
+                age = int.Parse(ageInput);
+            }
+
+            Employee emp = new Employee(name, salary, position, department, email, age);
+            employees.Add(emp);
+        }
+
 
         List<Employee> topEmployees = new List<Employee>();
         float highestAvgSalary = 0;
